@@ -2,7 +2,7 @@ import { Request, Response } from "express";
 import * as yup from 'yup';
 import { StatusCodes } from "http-status-codes";
 import { validation } from "../../shared/middlewares/Validation";
-import { PosicoesProvider } from "../../database/providers/Posicoes";
+import { PosicoesProvider } from "../../database/providers/posicoes";
 
 interface IParamProps {
     id?: number

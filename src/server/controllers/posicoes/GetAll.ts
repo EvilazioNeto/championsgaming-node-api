@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { StatusCodes } from "http-status-codes";
-import { PosicoesProvider } from "../../database/providers/Posicoes";
+import { PosicoesProvider } from "../../database/providers/posicoes";
 
 
 export const getAll = async (Req: Request, res: Response) => {
@@ -15,7 +15,6 @@ export const getAll = async (Req: Request, res: Response) => {
     }
 
     res.setHeader('access-control-expose-headers', 'x-total-count');
-    // res.setHeader('x-total-count', count)
 
     return res.status(StatusCodes.OK).json(result)
 };
