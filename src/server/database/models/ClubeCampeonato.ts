@@ -1,4 +1,4 @@
-export interface ClubeCampeonato {
+export interface IClubeCampeonato {
     id: number;
     clubeId: number;
     campeonatoId: number;

@@ -5,11 +5,12 @@ import { ensureAuthenticated } from "../shared/middlewares";
 import { ClubeController } from "../controllers/clube";
 import { JogadoresController } from "../controllers/jogadores";
 import { CampeonatoController } from "../controllers/campeonatos";
+import { ClubesCampeonatosController } from "../controllers/clubesCampeonatos";
 
 const router = Router();
 
 router.get('/', (_, res) => {
-    return res.json('teste');
+    return res.json('Running');
 })
 
 router.get('/posicoes', ensureAuthenticated, PosicoesController.getAll)
@@ -32,6 +33,12 @@ router.get('/campeonatos/:id', ensureAuthenticated, CampeonatoController.getById
 router.delete('/campeonatos/:id', ensureAuthenticated, CampeonatoController.deleteByIdValidation, CampeonatoController.deleteById)
 router.put('/campeonatos/:id', ensureAuthenticated, CampeonatoController.updateByIdValidation, CampeonatoController.updateById)
 router.get('/usuario/:id/campeonatos', ensureAuthenticated, CampeonatoController.getAllByUserIdValidation, CampeonatoController.getAllByUserId)
+
+router.post('/clubes-campeonatos', ensureAuthenticated, ClubesCampeonatosController.createValidation, ClubesCampeonatosController.create);
+router.get('/clubes-campeonatos/:id', ensureAuthenticated, ClubesCampeonatosController.getByIdValidation, ClubesCampeonatosController.getById)
+router.delete('/clubes-campeonatos/:id', ensureAuthenticated, ClubesCampeonatosController.deleteByIdValidation, ClubesCampeonatosController.deleteById);
+router.put('/clubes-campeonatos/:id', ensureAuthenticated, ClubesCampeonatosController.updateByIdValidation, ClubesCampeonatosController.updateById)
+router.get('/campeonatos/:id/clubes', ensureAuthenticated, ClubesCampeonatosController.getAllByCampeonatoIdValidation, ClubesCampeonatosController.getAllByCampeonatoId)
 
 router.post('/entrar', UsuariosController.signInValidation, UsuariosController.signIn)
 router.post('/cadastrar', UsuariosController.signUpValidation, UsuariosController.signUp)

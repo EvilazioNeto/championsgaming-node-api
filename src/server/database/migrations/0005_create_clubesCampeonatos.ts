@@ -2,15 +2,29 @@ import type { Knex } from "knex";
 import { ETableNames } from "../ETableNames";
 
 export async function up(knex: Knex) {
-    return knex.schema.createTable(ETableNames.campeonatos, table => {
+    return knex.schema.createTable(ETableNames.clubesCampeonatos, table => {
         table.bigIncrements('id').primary().index();
-        
+        table.integer('vitorias').notNullable().defaultTo(0);
+        table.integer('derrotas').notNullable().defaultTo(0);
+        table.integer('empates').notNullable().defaultTo(0);
+        table.integer('golsPro').notNullable().defaultTo(0);
+        table.integer('golsContra').notNullable().defaultTo(0);
+        table.integer('cartoesAmarelos').notNullable().defaultTo(0);
+        table.integer('cartoesVermelhos').notNullable().defaultTo(0);
 
-        table.bigInteger('usuarioId')
+        table.bigInteger('clubeId')
             .index()
             .notNullable()
             .references('id')
-            .inTable(ETableNames.usuario)
+            .inTable(ETableNames.clube)
+            .onUpdate('CASCADE')
+            .onDelete('RESTRICT');
+
+        table.bigInteger('campeonatoId')
+            .index()
+            .notNullable()
+            .references('id')
+            .inTable(ETableNames.campeonatos)
             .onUpdate('CASCADE')
             .onDelete('RESTRICT');
 
