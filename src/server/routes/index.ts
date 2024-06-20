@@ -4,6 +4,7 @@ import { UsuariosController } from "../controllers/usuarios";
 import { ensureAuthenticated } from "../shared/middlewares";
 import { ClubeController } from "../controllers/clube";
 import { JogadoresController } from "../controllers/jogadores";
+import { CampeonatoController } from "../controllers/campeonatos";
 
 const router = Router();
 
@@ -25,6 +26,12 @@ router.post('/jogadores', ensureAuthenticated, JogadoresController.createValidat
 router.get('/jogadores/:id', ensureAuthenticated, JogadoresController.getByIdValidation, JogadoresController.getById)
 router.delete('/jogadores/:id', ensureAuthenticated, JogadoresController.deleteByIdValidation, JogadoresController.deleteById)
 router.put('/jogadores/:id', ensureAuthenticated, JogadoresController.updateByIdValidation, JogadoresController.updateById)
+
+router.post('/campeonatos', ensureAuthenticated, CampeonatoController.createValidation, CampeonatoController.create)
+router.get('/campeonatos/:id', ensureAuthenticated, CampeonatoController.getByIdValidation, CampeonatoController.getById)
+router.delete('/campeonatos/:id', ensureAuthenticated, CampeonatoController.deleteByIdValidation, CampeonatoController.deleteById)
+router.put('/campeonatos/:id', ensureAuthenticated, CampeonatoController.updateByIdValidation, CampeonatoController.updateById)
+router.get('/usuario/:id/campeonatos', ensureAuthenticated, CampeonatoController.getAllByUserIdValidation, CampeonatoController.getAllByUserId)
 
 router.post('/entrar', UsuariosController.signInValidation, UsuariosController.signIn)
 router.post('/cadastrar', UsuariosController.signUpValidation, UsuariosController.signUp)
