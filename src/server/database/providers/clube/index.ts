@@ -1,6 +1,6 @@
 import * as create from './Create'
 import * as deleteById from './DeleteById'
-import * as getAll from './GetAll'
+import * as getAllByUserId from './GetAllByUserId'
 import * as count from './Count'
 import * as getById from './getById'
 import * as updateById from './updateById'
@@ -8,7 +8,7 @@ import * as updateById from './updateById'
 export const ClubeProvider = {
     ...create,
     ...deleteById,
-    ...getAll,
+    ...getAllByUserId,
     ...count,
     ...getById,
     ...updateById

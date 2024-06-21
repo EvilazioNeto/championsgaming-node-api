@@ -20,7 +20,7 @@ router.get('/posicoes/:id', ensureAuthenticated, PosicoesController.getByIdValid
 
 router.post('/clubes', ensureAuthenticated, ClubeController.createValidation, ClubeController.create)
 router.delete('/clubes/:id', ensureAuthenticated, ClubeController.deleteByIdValidation, ClubeController.deleteById)
-router.get('/clubes', ensureAuthenticated, ClubeController.getAllValidation, ClubeController.getAll)
+router.get('/usuario/:id/clubes', ensureAuthenticated, ClubeController.getAllByUserIdValidation, ClubeController.getAllByUserId)
 router.get('/clubes/:id', ensureAuthenticated, ClubeController.getByIdValidation, ClubeController.getById)
 router.put('/clubes/:id', ensureAuthenticated, ClubeController.updateByIdValidation, ClubeController.updateById)
 router.get('/clubes/:id/jogadores', ensureAuthenticated, JogadoresController.getAllByClubIdValidation, JogadoresController.getAllByClubId)
@@ -49,6 +49,10 @@ router.get('/jogos/:id', ensureAuthenticated, JogosController.getByIdValidation,
 router.put('/jogos/:id', ensureAuthenticated, JogosController.updateByIdValidation, JogosController.updateById)
 
 router.post('/jogadores-jogos', ensureAuthenticated, JogadoresJogosController.createValidation, JogadoresJogosController.create)
+router.get('/jogadores-jogos/:id', ensureAuthenticated, JogadoresJogosController.getByIdValidation, JogadoresJogosController.getById)
+router.delete('/jogadores-jogos/:id', ensureAuthenticated, JogadoresJogosController.deleteByIdValidation, JogadoresJogosController.deleteById)
+router.put('/jogadores-jogos/:id', ensureAuthenticated, JogadoresJogosController.updateByIdValidation, JogadoresJogosController.updateById)
+router.get('/jogadores/:id/jogos', ensureAuthenticated, JogadoresJogosController.getAllByJogadorIdValidation, JogadoresJogosController.getAllByJogadorId)
 
 router.post('/entrar', UsuariosController.signInValidation, UsuariosController.signIn)
 router.post('/cadastrar', UsuariosController.signUpValidation, UsuariosController.signUp)
