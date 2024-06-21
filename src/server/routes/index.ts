@@ -6,6 +6,8 @@ import { ClubeController } from "../controllers/clube";
 import { JogadoresController } from "../controllers/jogadores";
 import { CampeonatoController } from "../controllers/campeonatos";
 import { ClubesCampeonatosController } from "../controllers/clubesCampeonatos";
+import { JogosController } from "../controllers/jogos";
+import { JogadoresJogosController } from "../controllers/jogadoresJogos";
 
 const router = Router();
 
@@ -39,6 +41,14 @@ router.get('/clubes-campeonatos/:id', ensureAuthenticated, ClubesCampeonatosCont
 router.delete('/clubes-campeonatos/:id', ensureAuthenticated, ClubesCampeonatosController.deleteByIdValidation, ClubesCampeonatosController.deleteById);
 router.put('/clubes-campeonatos/:id', ensureAuthenticated, ClubesCampeonatosController.updateByIdValidation, ClubesCampeonatosController.updateById)
 router.get('/campeonatos/:id/clubes', ensureAuthenticated, ClubesCampeonatosController.getAllByCampeonatoIdValidation, ClubesCampeonatosController.getAllByCampeonatoId)
+
+router.post('/jogos', ensureAuthenticated, JogosController.createValidation, JogosController.create)
+router.delete('/jogos/:id', ensureAuthenticated, JogosController.deleteByIdValidation, JogosController.deleteById)
+router.get('/campeonatos/:id/jogos', ensureAuthenticated, JogosController.getAllByCampeonatoIdValidation, JogosController.getAllByCampeonatoId)
+router.get('/jogos/:id', ensureAuthenticated, JogosController.getByIdValidation, JogosController.getById)
+router.put('/jogos/:id', ensureAuthenticated, JogosController.updateByIdValidation, JogosController.updateById)
+
+router.post('/jogadores-jogos', ensureAuthenticated, JogadoresJogosController.createValidation, JogadoresJogosController.create)
 
 router.post('/entrar', UsuariosController.signInValidation, UsuariosController.signIn)
 router.post('/cadastrar', UsuariosController.signUpValidation, UsuariosController.signUp)

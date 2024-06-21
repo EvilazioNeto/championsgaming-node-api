@@ -1,15 +1,13 @@
 import * as create from './Create'
 import * as deleteById from './DeleteById'
 import * as getAllByCampeonatoId from './GetAllByCampeonatoId'
-import * as updateById from './UpdateById'
 import * as getById from './GetById'
-import * as updateByIdById from './UpdateById'
+import * as updateById from './UpdateById'
 
-export const ClubeCampeonatoProvider = {
+export const JogosController = {
     ...create,
     ...deleteById,
     ...getAllByCampeonatoId,
-    ...updateById,
     ...getById,
     ...updateById
 }

@@ -4,5 +4,7 @@ export enum ETableNames {
     clube = 'clube',
     jogadores = 'jogadores',
     campeonatos = 'campeonatos',
-    clubesCampeonatos = 'clubesCampeonatos'
+    clubesCampeonatos = 'clubesCampeonatos',
+    jogos= 'jogos',
+    jogadoresJogos = 'jogadoresJogos'
   }
