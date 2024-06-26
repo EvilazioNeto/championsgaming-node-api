@@ -43,7 +43,11 @@ export const signIn = async (req: Request<{}, {}, IBodyProps>, res: Response) =>
         }
       });
     }
+    const user = {
+      id: usuario.id,
+      email: usuario.email,
+    }
 
-    return res.status(StatusCodes.OK).json({ accessToken });
+    return res.status(StatusCodes.OK).json({ accessToken: accessToken, user});
   }
 };
