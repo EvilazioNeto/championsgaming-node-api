@@ -17,6 +17,8 @@ export const createValidation = validation((getSchema) => ({
         golClube2: yup.number().required(),
         horaJogo: yup.string().required(),
         localJogo: yup.string().required(),
+        rodada: yup.number().required(),
+        tipoJogo: yup.string().required()
     }))
 }))
 

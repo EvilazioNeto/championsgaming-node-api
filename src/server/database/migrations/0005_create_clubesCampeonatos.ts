@@ -32,15 +32,15 @@ export async function up(knex: Knex) {
         table.comment('Tabela usada para armazenar as informações dos clubes nos campeonatos no sistema')
     })
         .then(() => {
-            console.log(`# Created table ${ETableNames.campeonatos}`)
+            console.log(`# Created table ${ETableNames.clubesCampeonatos}`)
         })
 }
 
 export async function down(knex: Knex) {
     return knex
         .schema
-        .dropTable(ETableNames.campeonatos)
+        .dropTable(ETableNames.clubesCampeonatos)
         .then(() => {
-            console.log(`# Dropped table ${ETableNames.campeonatos}`)
+            console.log(`# Dropped table ${ETableNames.clubesCampeonatos}`)
         })
 }

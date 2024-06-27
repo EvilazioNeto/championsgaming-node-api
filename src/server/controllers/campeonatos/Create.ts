@@ -12,7 +12,10 @@ export const createValidation = validation((getSchema) => ({
         nome: yup.string().required().min(3),
         dataInicio: yup.date().required(),
         dataFim: yup.date().required(),
-        usuarioId: yup.number().required().moreThan(0)
+        usuarioId: yup.number().required().moreThan(0),
+        quantidadeTimes: yup.number().required(),
+        numeroRodadas: yup.number().required(),
+        status: yup.string().required()
     }))
 }))
 

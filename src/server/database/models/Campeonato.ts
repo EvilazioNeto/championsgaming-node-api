@@ -4,4 +4,7 @@ export interface ICampeonato {
     dataInicio: Date;
     dataFim: Date;
     usuarioId: number;
+    status: string;
+    numeroRodadas: number;
+    quantidadeTimes: number
 }

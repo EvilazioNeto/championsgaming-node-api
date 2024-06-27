@@ -8,6 +8,8 @@ export interface IJogo {
     clube2Id: number;
     golClube2: number;
     localJogo: string;
+    rodada: number;
+    tipoJogo: string
 }
 
 

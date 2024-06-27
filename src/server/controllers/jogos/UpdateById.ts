@@ -23,6 +23,8 @@ export const updateByIdValidation = validation((getSchema) => ({
         golClube2: yup.number(),
         horaJogo: yup.string(),
         localJogo: yup.string(),
+        rodada: yup.number(),
+        tipoJogo: yup.string()
     }))
 }));
 
