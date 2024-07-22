@@ -6,5 +6,5 @@ export interface ICampeonato {
     usuarioId: number;
     status: string;
     numeroRodadas: number;
-    quantidadeTimes: number
+    quantidadeTimes: number;
 }
