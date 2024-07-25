@@ -20,7 +20,8 @@ export const updateByIdValidation = validation((getSchema) => ({
         mascote: yup.string(),
         cor_principal: yup.string(),
         cor_secundaria: yup.string(),
-        usuarioId: yup.number().moreThan(0)
+        usuarioId: yup.number().moreThan(0),
+        fotoUrl: yup.string().url().required().max(255),
     }))
 }))
 

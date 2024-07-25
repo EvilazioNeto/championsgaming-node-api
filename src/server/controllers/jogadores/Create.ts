@@ -15,6 +15,7 @@ export const createValidation = validation((getSchema) => ({
         posicaoId: yup.number().integer().moreThan(0).required(),
         nacionalidade: yup.string().required(),
         numeroCamisa: yup.number().integer().moreThan(0).lessThan(100).required(),
+        fotoUrl: yup.string().url().required().max(255),
     }))
 }))
 

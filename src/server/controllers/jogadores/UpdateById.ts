@@ -22,6 +22,7 @@ export const updateByIdValidation = validation((getSchema) => ({
         posicaoId: yup.number().integer().moreThan(0),
         nacionalidade: yup.string(),
         numeroCamisa: yup.number().integer().moreThan(0).lessThan(100),
+        fotoUrl: yup.string().url().required().max(255),
     }))
 }));
 

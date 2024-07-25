@@ -5,4 +5,5 @@ export interface IClube {
     cor_principal: string;
     cor_secundaria: string; 
     usuarioId: number;
+    fotoUrl: string;
 }
