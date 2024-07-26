@@ -13,7 +13,8 @@ export const createValidation = validation((getSchema) => ({
         mascote: yup.string().required(),
         cor_principal: yup.string().required(),
         cor_secundaria: yup.string().required(),
-        usuarioId: yup.number().required().moreThan(0)
+        usuarioId: yup.number().required().moreThan(0),
+        fotoUrl: yup.string().url().required().max(255),
     })),
 }))
 

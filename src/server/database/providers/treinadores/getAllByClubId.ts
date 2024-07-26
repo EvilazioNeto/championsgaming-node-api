@@ -2,11 +2,11 @@ import { ETableNames } from "../../ETableNames"
 import { Knex } from "../../knex"
 import { ITreinador } from "../../models/Treinador";
 
-export const getAllByCoachId = async (treinadorId: number): Promise<ITreinador[] | Error> => {
+export const getAllByClubId = async (clubeId: number): Promise<ITreinador[] | Error> => {
     try {
         const result = await Knex(ETableNames.treinadores)
             .select('*')
-            .where('treinadorId', '=', treinadorId)
+            .where('clubeId', '=', clubeId)
 
         
         if (result) return result;

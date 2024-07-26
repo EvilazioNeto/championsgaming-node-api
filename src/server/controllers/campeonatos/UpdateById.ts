@@ -24,7 +24,8 @@ export const updateByIdValidation = validation((getSchema) => ({
         usuarioId: yup.number().moreThan(0),
         quantidadeTimes: yup.number(),
         numeroRodadas: yup.number(),
-        status: yup.string()
+        status: yup.string(),
+        fotoUrl: yup.string().url().required().max(255),
     }))
 }));
 

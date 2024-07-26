@@ -4,4 +4,4 @@
 /coverage
 
 .env
-*.sqlite
+# *.sqlite

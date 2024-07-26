@@ -7,4 +7,5 @@ export interface ICampeonato {
     status: string;
     numeroRodadas: number;
     quantidadeTimes: number;
+    fotoUrl: string;
 }

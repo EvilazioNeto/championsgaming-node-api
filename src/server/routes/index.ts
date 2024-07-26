@@ -55,10 +55,11 @@ router.delete('/jogadores-jogos/:id', ensureAuthenticated, JogadoresJogosControl
 router.put('/jogadores-jogos/:id', ensureAuthenticated, JogadoresJogosController.updateByIdValidation, JogadoresJogosController.updateById)
 router.get('/jogadores/:id/jogos', ensureAuthenticated, JogadoresJogosController.getAllByJogadorIdValidation, JogadoresJogosController.getAllByJogadorId)
 
-router.post('treinadores', ensureAuthenticated, TreinadoresController.createValidation, TreinadoresController.create)
-router.get('treinadores/:id', ensureAuthenticated, TreinadoresController.getByIdValidation, TreinadoresController.getById)
-router.delete('treinadores/:id', ensureAuthenticated, TreinadoresController.deleteByIdValidation, TreinadoresController.deleteById)
-router.put('treinadores/:id', ensureAuthenticated, TreinadoresController.updateByIdValidation, TreinadoresController.updateById)
+router.post('/treinadores', ensureAuthenticated, TreinadoresController.createValidation, TreinadoresController.create)
+router.get('/treinadores/:id', ensureAuthenticated, TreinadoresController.getByIdValidation, TreinadoresController.getById)
+router.delete('/treinadores/:id', ensureAuthenticated, TreinadoresController.deleteByIdValidation, TreinadoresController.deleteById)
+router.put('/treinadores/:id', ensureAuthenticated, TreinadoresController.updateByIdValidation, TreinadoresController.updateById)
+router.get('/clubes/:id/treinador', ensureAuthenticated, TreinadoresController.getAllByClubIdValidation, TreinadoresController.getAllByClubId)
 
 router.post('/entrar', UsuariosController.signInValidation, UsuariosController.signIn)
 router.post('/cadastrar', UsuariosController.signUpValidation, UsuariosController.signUp)
