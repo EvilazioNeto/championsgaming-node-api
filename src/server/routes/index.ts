@@ -21,8 +21,8 @@ router.get('/posicoes/:id', ensureAuthenticated, PosicoesController.getByIdValid
 
 router.post('/clubes', ensureAuthenticated, ClubeController.createValidation, ClubeController.create)
 router.delete('/clubes/:id', ensureAuthenticated, ClubeController.deleteByIdValidation, ClubeController.deleteById)
-router.get('/usuario/:id/clubes', ensureAuthenticated, ClubeController.getAllByUserIdValidation, ClubeController.getAllByUserId)
-router.get('/clubes/:id', ensureAuthenticated, ClubeController.getByIdValidation, ClubeController.getById)
+router.get('/usuario/:id/clubes',ensureAuthenticated, ClubeController.getAllByUserIdValidation, ClubeController.getAllByUserId)
+router.get('/clubes/:id', ClubeController.getByIdValidation, ClubeController.getById)
 router.put('/clubes/:id', ensureAuthenticated, ClubeController.updateByIdValidation, ClubeController.updateById)
 router.get('/clubes/:id/jogadores', ensureAuthenticated, JogadoresController.getAllByClubIdValidation, JogadoresController.getAllByClubId)
 
@@ -32,21 +32,21 @@ router.delete('/jogadores/:id', ensureAuthenticated, JogadoresController.deleteB
 router.put('/jogadores/:id', ensureAuthenticated, JogadoresController.updateByIdValidation, JogadoresController.updateById)
 
 router.post('/campeonatos', ensureAuthenticated, CampeonatoController.createValidation, CampeonatoController.create)
-router.get('/campeonatos/:id', ensureAuthenticated, CampeonatoController.getByIdValidation, CampeonatoController.getById)
+router.get('/campeonatos/:id', CampeonatoController.getByIdValidation, CampeonatoController.getById)
 router.delete('/campeonatos/:id', ensureAuthenticated, CampeonatoController.deleteByIdValidation, CampeonatoController.deleteById)
 router.put('/campeonatos/:id', ensureAuthenticated, CampeonatoController.updateByIdValidation, CampeonatoController.updateById)
-router.get('/usuario/:id/campeonatos', ensureAuthenticated, CampeonatoController.getAllByUserIdValidation, CampeonatoController.getAllByUserId)
+router.get('/usuario/:id/campeonatos',ensureAuthenticated, CampeonatoController.getAllByUserIdValidation, CampeonatoController.getAllByUserId)
 
 router.post('/clubes-campeonatos', ensureAuthenticated, ClubesCampeonatosController.createValidation, ClubesCampeonatosController.create);
-router.get('/clubes-campeonatos/:id', ensureAuthenticated, ClubesCampeonatosController.getByIdValidation, ClubesCampeonatosController.getById)
+router.get('/clubes-campeonatos/:id', ClubesCampeonatosController.getByIdValidation, ClubesCampeonatosController.getById)
 router.delete('/clubes-campeonatos/:id', ensureAuthenticated, ClubesCampeonatosController.deleteByIdValidation, ClubesCampeonatosController.deleteById);
 router.put('/clubes-campeonatos/:id', ensureAuthenticated, ClubesCampeonatosController.updateByIdValidation, ClubesCampeonatosController.updateById)
-router.get('/campeonatos/:id/clubes', ensureAuthenticated, ClubesCampeonatosController.getAllByCampeonatoIdValidation, ClubesCampeonatosController.getAllByCampeonatoId)
+router.get('/campeonatos/:id/clubes', ClubesCampeonatosController.getAllByCampeonatoIdValidation, ClubesCampeonatosController.getAllByCampeonatoId)
 
 router.post('/jogos', ensureAuthenticated, JogosController.createValidation, JogosController.create)
 router.delete('/jogos/:id', ensureAuthenticated, JogosController.deleteByIdValidation, JogosController.deleteById)
-router.get('/campeonatos/:id/jogos', ensureAuthenticated, JogosController.getAllByCampeonatoIdValidation, JogosController.getAllByCampeonatoId)
-router.get('/jogos/:id', ensureAuthenticated, JogosController.getByIdValidation, JogosController.getById)
+router.get('/campeonatos/:id/jogos', JogosController.getAllByCampeonatoIdValidation, JogosController.getAllByCampeonatoId)
+router.get('/jogos/:id', JogosController.getByIdValidation, JogosController.getById)
 router.put('/jogos/:id', ensureAuthenticated, JogosController.updateByIdValidation, JogosController.updateById)
 
 router.post('/jogadores-jogos', ensureAuthenticated, JogadoresJogosController.createValidation, JogadoresJogosController.create)
