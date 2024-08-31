@@ -23,7 +23,7 @@ export const createValidation = validation((getSchema) => ({
 }))
 
 export const create = async (req: Request<{}, {}, IBodyProps>, res: Response) => {
-    const result = JogosProvider.create(req.body);
+    const result = await JogosProvider.create(req.body);
 
     if (result instanceof Error) {
         return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({

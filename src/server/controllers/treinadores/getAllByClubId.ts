@@ -8,22 +8,21 @@ interface IParamProps {
     id?: number
 }
 
-export const deleteByIdValidation = validation((getSchema) => ({
+export const getAllByClubIdValidation = validation((getSchema) => ({
     params: getSchema<IParamProps>(yup.object().shape({
         id: yup.number().integer().required().moreThan(0),
     }))
 }));
 
-export const deleteById = async (req: Request<IParamProps>, res: Response) => {
- 
-    if(!req.params.id){
+export const getAllByClubId = async (req: Request<IParamProps>, res: Response) => {
+    if (!req.params.id) {
         return res.status(StatusCodes.BAD_REQUEST).json({
             errors: {
                 default: 'O parâmetro "id" precisa ser informado'
             }
         })
     }
-    const result = await TreinadoresProvider.deleteById(req.params.id);
+    const result = await TreinadoresProvider.getAllByClubId(req.params.id);
 
     if (result instanceof Error) {
         return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({

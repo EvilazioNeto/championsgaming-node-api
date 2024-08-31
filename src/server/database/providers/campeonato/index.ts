@@ -1,8 +1,8 @@
 import * as create from './Create'
 import * as deleteById from './DeleteById'
+import * as getAllByUserId  from './GetAllByUserId'
 import * as getById from './GetById'
 import * as updateById from './UpdateById'
-import * as getAllByUserId from './getAllByUserId'
 
 export const CampeonatoProvider = {
     ...create,

@@ -1,4 +1,4 @@
-import * as getAllByCoachId from "./getAllByCoachId"
+import * as getAllByClubId from "./getAllByClubId"
 import * as create from "./create"
 import * as getById from "./getById"
 import * as deleteById from "./deleteById"
@@ -10,5 +10,5 @@ export const TreinadoresProvider = {
     ...getById,
     ...deleteById,
     ...updateById,
-    ...getAllByCoachId,
+    ...getAllByClubId,
 }
