@@ -10,9 +10,10 @@ export async function up(knex: Knex) {
 }
 
 export async function down(knex: Knex) {
-    return knex.schema.table(ETableNames.treinadores, table => {
-        table.dropColumn('fotoUrl');
-    }).then(() => {
-        console.log(`# Dropped column fotoUrl from table ${ETableNames.treinadores}`);
-    });
+    return knex
+        .schema
+        .dropTable(ETableNames.treinadores)
+        .then(() => {
+            console.log(`# Dropped table ${ETableNames.treinadores}`)
+        })
 }
