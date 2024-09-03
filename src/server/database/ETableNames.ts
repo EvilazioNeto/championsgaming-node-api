@@ -8,4 +8,5 @@ export enum ETableNames {
     jogos= 'jogos',
     jogadoresJogos = 'jogadoresJogos',
     treinadores = 'treinadores',
+    passwordReset = 'passwordReset'
   }

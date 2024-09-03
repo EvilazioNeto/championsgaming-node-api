@@ -63,5 +63,7 @@ router.get('/clubes/:id/treinador', ensureAuthenticated, TreinadoresController.g
 
 router.post('/entrar', UsuariosController.signInValidation, UsuariosController.signIn)
 router.post('/cadastrar', UsuariosController.signUpValidation, UsuariosController.signUp)
+router.post('/forgot-password', UsuariosController.forgotPasswordInValidation, UsuariosController.forgotPassword)
+router.post('/reset-password', UsuariosController.resetPasswordValidation, UsuariosController.resetPassword)
 
 export { router }
